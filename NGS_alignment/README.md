@@ -26,8 +26,6 @@ ChIP-seq (Zyclicz et al. 2019): Published Paired-End ChIP-seq data for H3K4me1, 
 RNA-seq (Zhang et al. 2018):  Published RNA-seq data from E3.5, E4.0, E5.5, E6.5 and E7.5 mouse embryos was retrieved from GSE76505.
 
 ## Software dependencies and operating systems
-This folder stores all the BASH and PYTHON scripts used for read alignment and processing of the various NGS data.
-
 In order to perform these analyses, the following software has to be installed and available on the command line ($PATH):
 - Bedtools (v2.29.2) collection of C++ scripts from "https://bedtools.readthedocs.io/en/latest/"
 - Bowtie2 (v2.3.5.1) aligner from "https://github.com/BenLangmead/bowtie2"
