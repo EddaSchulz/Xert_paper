@@ -1,6 +1,8 @@
 # NGS Read Alignment and Data Processing
 
 ## Description
+This folder contains the code for alignment and data processing of the following sequencing data:
+
 ATAC-seq: ATAC-seq was performed in the TX1072 XXΔXic (XX line carrying a heterozygous deletion of the Xic: chrX:103182701-103955531 on the B6 allele) and TX1072 XO (X chromosome from Cast background) cell lines. The data was collected in replicates from cells in 2i+LIF medium (day 0), as well at day 2 and day 4 of differentiation (via 2i+LIF-withdrawal).
 
 CUT&Tag: CUT&Tag targeting H3K4me3, H3K27ac, H3K4me1, H3K9me3, H3K27me3, H3K36me3 and H2AK119ub was performed in the TX1072 XXΔXic (XX line carrying a heterozygous deletion of the Xic: chrX:103182701-103955531 on the B6 allele) and TX1072 XO (X chromosome from Cast background) cell lines. The data was collected in replicates from cells in 2i+LIF medium (day 0), as well at day 2 and day 4 of differentiation (via 2i+LIF-withdrawal).
