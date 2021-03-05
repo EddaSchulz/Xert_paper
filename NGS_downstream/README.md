@@ -25,7 +25,7 @@ R scripts can be run using R (v.3.6.3) software ("https://cran.r-project.org/").
 
 
 ## Reproduce analysis
-The raw sequencing data (GSE167358) should be previously processed using the code within "/NGS_alignment/". Gene annotation (as GTF) has to be downloaded from https://www.gencodegenes.org/mouse/release_M25.html, appended with "/NGS_alignment/files/Xert.gtf" and stored as "/NGS_downstream/files/GENCODE_vM25_plus_Xert.gtf".
+The raw sequencing data (GSE167358) should be previously processed using the code within "/NGS_alignment/" (Output should not be renamed). Gene annotation (as GTF) has to be downloaded from https://www.gencodegenes.org/mouse/release_M25.html, appended with "/NGS_alignment/files/Xert.gtf" and stored as "/NGS_downstream/files/GENCODE_vM25_plus_Xert.gtf".
 Data analysis and plotting can be performed using the master scripts in the "NGS_downstream/master/" directory. For all master scripts it is necessary to provide a path to "Xert_paper/NGS_alignment/" (with -p) and to directories containing the various input files (that were previously generated with the code in "/NGS_alingment/".
 
 - (i)   "master_ChromHMM.sh": Conducts ChromHMM analysis to retrieve putative RE states from CUT&Tag and ATAC-seq data. Returns colored BED files for use with the UCSC genome browser and plots the relative enrichment of different marks within different chromatin states. Requires paths to directories containing merged ATAC-seq (with -a) and CUT&Tag (with -c) BAM files (generated with "NGS_alignment/master/master_ATACseq.sh" and "NGS_alignment/master/master_CUTnTag.sh").
