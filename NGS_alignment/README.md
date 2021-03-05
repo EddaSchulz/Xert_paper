@@ -55,4 +55,4 @@ For all scripts, it is necessary to provide a path to "Xert_paper/NGS_alignment/
 - (ix) "master_Zhang_RNAseq.sh": Builds mm10 genome, aligns and processes embryo RNA-seq data from Zhang et al. 2018.
 - (x) "master_Zylicz_ChIPseq.sh": Builds masked mm10 genome, aligns and processes ChIPseq data from Zylicz et al. 2019.
 
-All scripts that are used by the master scripts are stored in "/NGS_alignment/scripts/". All files other than the FASTQ files that are necessary to run the master scripts are stored in "/NGS_alignment/files/".
+All scripts that are used by the master scripts are stored in "/NGS_alignment/scripts/". All files that are necessary to run the master scripts, other than those mentioned above (FASTQ files, genome annotation files), are stored in "/NGS_alignment/files/".
