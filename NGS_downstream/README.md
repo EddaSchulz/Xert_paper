@@ -21,7 +21,7 @@ R scripts can be run using R (v.3.6.3) software ("https://cran.r-project.org/").
 - Rgb (v1.6.1)
 - Rsubread (v2.0.1)
 - tidyverse (v1.3.0)
-- TxDb.Mmusculus.UCSC.mm10.knownGene (3.10.0)
+- TxDb.Mmusculus.UCSC.mm10.knownGene (v3.10.0)
 
 
 ## Reproduce analysis
