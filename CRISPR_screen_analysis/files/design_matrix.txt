@@ -1,0 +1,11 @@
+Samples	baseline	Negative	Low	Medium	High
+R1_Unsorted	1	0	0	0	0
+R2_Unsorted	1	0	0	0	0	
+R1_Negative	1	1	0	0	0
+R2_Negative	1	1	0	0	0
+R1_Low	1	0	1	0	0
+R2_Low	1	0	1	0	0
+R1_Medium	1	0	0	1	0
+R2_Medium	1	0	0	1	0
+R1_High	1	0	0	0	1
+R2_High	1	0	0	0	1
