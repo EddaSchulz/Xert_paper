@@ -14,7 +14,7 @@ help() {
    echo "d     Provides working directory (Standard is current directory)."
    echo "c     Provide directory containing merged BAM files (CUT&Tag). [mandatory]"
    echo "h     Prints this help."
-   echo "p     Provide path to /Gjaltema_paper/NGS_downstream. [mandatory]"
+   echo "p     Provide path to /Xert_paper/NGS_downstream. [mandatory]"
    echo
 }
 
