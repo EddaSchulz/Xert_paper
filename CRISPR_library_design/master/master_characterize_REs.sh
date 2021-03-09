@@ -1,8 +1,6 @@
 #!/bin/bash
 # Characterizes the Candidate REs based on which peaks were present in them
 # Plots Sup. Fig. 1b-d
-starr_dir=''
-atac_dir=''
 work_dir=$(pwd)'/'
 path=''
 
