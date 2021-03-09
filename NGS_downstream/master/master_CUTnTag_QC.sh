@@ -17,7 +17,7 @@ help() {
    echo "m     Provide directory containing merged BAM files (from CUT&Tag). [mandatory]"
    echo "n     Provide directory containing merged peak files (from CUT&Tag. [mandatory])"
    echo "h     Prints this help."
-   echo "p     Provide path to /Gjaltema_paper/NGS_downstream. [mandatory]"
+   echo "p     Provide path to /Xert_paper/NGS_downstream. [mandatory]"
    echo "z     Provide directory containg BAM files from Zylicz et al. 2019. [mandatory]"
    echo
 }
