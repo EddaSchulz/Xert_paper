@@ -9,11 +9,11 @@ path=''
 help() {
    echo "Characterizes candidate REs based on origin of peaks, gDNA number and length"
    echo
-   echo "Syntax: ./master_characterize_REs.sh [-d|h|p|r|t]"
+   echo "Syntax: ./master_characterize_REs.sh [-d|h|p]"
    echo "options:"
    echo "d     Provides working directory (Standard is current directory)."
    echo "h     Prints this help."
-   echo "p     Provide path to /Xert_paper/CRISPR_library_design. [mandatory]"
+   echo "p     Provide path to /Xert_paper/CRISPR_library_design/. [mandatory]"
    echo
 }
 
