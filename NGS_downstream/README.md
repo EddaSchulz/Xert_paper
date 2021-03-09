@@ -14,7 +14,7 @@ In order to perform these analyses, the following software has to be installed a
 R scripts can be run using R (v.3.6.3) software ("https://cran.r-project.org/"). The following R libraries are required:
 - ChIPseeker (v1.22.1)
 - DESeq2 (v1.26.0)
-- DiffBind (v
+- DiffBind (v2.6.6)
 - egg (v0.4.5)
 - EnvStats (v2.4.0)
 - extrafont (v0.17)
