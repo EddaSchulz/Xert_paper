@@ -10,9 +10,9 @@ help() {
    echo "Syntax: ./master_STARRseq.sh [-d|f|p|h]"
    echo "options:"
    echo "d     Provide working directory. [optional]"
-   echo "f     Provide directory containing FASTQ files (GSEXXX). [mandatory]"
+   echo "f     Provide directory containing FASTQ files (GSE167355). [mandatory]"
    echo "h     Prints this help."
-   echo "p     Provide path to /Gjaltema_paper/NGS_alignment. [mandatory]"
+   echo "p     Provide path to /Xert_paper/NGS_alignment/. [mandatory]"
    echo
 }
 
