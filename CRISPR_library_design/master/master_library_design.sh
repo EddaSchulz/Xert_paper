@@ -9,11 +9,11 @@ path=''
 help() {
    echo "Combines ATAC-seq and STARR-seq data with FANTOM5 enhancers to create candidate REs withiin the Xic"
    echo
-   echo "Syntax: ./master_library_design.sh [-d|h|p|r|t]"
+   echo "Syntax: ./master_library_design.sh [-d|h|p|s|a]"
    echo "options:"
    echo "d     Provides working directory (Standard is current directory)."
    echo "h     Prints this help."
-   echo "p     Provide path to /Xert_paper/CRISPR_library_design. [mandatory]"
+   echo "p     Provide path to /Xert_paper/CRISPR_library_design/. [mandatory]"
    echo "s     Provide directory containing STARR-seq BAM files (/NGS_alignment/master/master_STARRseq.sh). [mandatory]"
    echo "a     Provide directory containing ATAC-seq BAM files (/NGS_alignment/master/master_ATACseq.sh). [mandatory]"
    echo
