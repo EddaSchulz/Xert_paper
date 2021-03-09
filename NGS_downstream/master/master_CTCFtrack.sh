@@ -6,11 +6,11 @@ path=''
 help() {
    echo "Prepares CTCF .tsv file from FIMO for use in UCSC (to visualize CBS)."
    echo
-   echo "Syntax: ./master_CTCFtrack.sh [-b|d|p|h]"
+   echo "Syntax: ./master_CTCFtrack.sh [-d|p|h]"
    echo "options:"
    echo "d     Provides working directory (Standard is current directory)."
    echo "h     Prints this help."
-   echo "p     Provide path to /Gjaltema_paper/NGS_downstream. [mandatory]"
+   echo "p     Provide path to /Xert_paper/NGS_downstream/. [mandatory]"
    echo
 }
 
