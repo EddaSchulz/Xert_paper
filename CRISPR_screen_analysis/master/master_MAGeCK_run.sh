@@ -12,7 +12,7 @@ help() {
    echo "f     Provide directory containing FASTQ files (CRISPR Screen). [mandatory]"
    echo "d     Provides working directory (Standard is current directory)."
    echo "h     Prints this help."
-   echo "p     Provide path to /Xert_paper/CRISPR_screen_analysis. [mandatory]"
+   echo "p     Provide path to /Xert_paper/CRISPR_screen_analysis/. [mandatory]"
    echo
 }
 
