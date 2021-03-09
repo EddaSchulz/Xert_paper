@@ -10,14 +10,14 @@ peak_dir=''
 help() {
    echo "Generates and plots QC metrics for CUT&Tag data."
    echo
-   echo "Syntax: ./master_CUTnTag_QC.sh [-b|d|p|h]"
+   echo "Syntax: ./master_CUTnTag_QC.sh [-b|d|p|h|m|n|z]"
    echo "options:"
    echo "d     Provides working directory (Standard is current directory)."
    echo "b     Provide directory containing replicate BAM files (from CUT&Tag). [mandatory]"
    echo "m     Provide directory containing merged BAM files (from CUT&Tag). [mandatory]"
    echo "n     Provide directory containing merged peak files (from CUT&Tag. [mandatory])"
    echo "h     Prints this help."
-   echo "p     Provide path to /Xert_paper/NGS_downstream. [mandatory]"
+   echo "p     Provide path to /Xert_paper/NGS_downstream/. [mandatory]"
    echo "z     Provide directory containg BAM files from Zylicz et al. 2019. [mandatory]"
    echo
 }
