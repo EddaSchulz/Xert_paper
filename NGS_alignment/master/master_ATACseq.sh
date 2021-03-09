@@ -12,7 +12,7 @@ help() {
    echo "d     Provide working directory. [optional]"
    echo "f     Provide directory containing FASTQ files (GSE167350). [mandatory]"
    echo "h     Prints this help."
-   echo "p     Provide path to /Gjaltema_paper/NGS_alignment. [mandatory]"
+   echo "p     Provide path to /Xert_paper/NGS_alignment. [mandatory]"
    echo
 }
 
