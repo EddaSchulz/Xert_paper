@@ -13,7 +13,7 @@ help() {
    echo "options:"
    echo "d     Provides working directory (Standard is current directory)."
    echo "h     Prints this help."
-   echo "p     Provide path to /Xert_paper/NGS_downstream. [mandatory]"
+   echo "p     Provide path to /Xert_paper/NGS_downstream/. [mandatory]"
    echo "r     Provide directory containing RNA-seq BAM files (/NGS_alignment/master/master_RNAseq.sh). [mandatory]"
    echo "t     Provide directory containing TT-seq BAM files (/NGS_alignment/master/master_TTseq.sh). [mandatory]"
    echo
