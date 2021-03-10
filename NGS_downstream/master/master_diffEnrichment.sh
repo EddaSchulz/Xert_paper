@@ -17,7 +17,7 @@ help() {
    echo "d     Provides working directory (Standard is current directory)."
    echo "c     Provide directory containing merged peak files (CUT&Tag). [mandatory]"
    echo "h     Prints this help."
-   echo "p     Provide path to /Gjaltema_paper/NGS_downstream. [mandatory]"
+   echo "p     Provide path to /Xert_paper/NGS_downstream/. [mandatory]"
    echo "t     Provide directory containing BAM files (ATAC-seq). [mandatory]"
    echo
 }
@@ -60,7 +60,7 @@ done
 
 if [[ $path == '' ]]
 then
-	echo -e "Please provide the path to /Xert_paper/NGS_downstream with -p"
+	echo -e "Please provide the path to /Xert_paper/NGS_downstream/ with -p"
   exit 1
 fi
 
