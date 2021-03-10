@@ -45,7 +45,7 @@ done
 
 if [[ $path == '' ]]
 then
-	echo -e "Please provide a path to /Gjaltema_paper/NGS_alignment with -p"
+	echo -e "Please provide a path to /Xert_paper/NGS_alignment/ with -p"
   exit 1
 fi
 
