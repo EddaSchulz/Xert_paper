@@ -40,7 +40,7 @@ done
 
 if [[ $path == '' ]]
 then
-	echo -e "Please provide the path to /Xert_paper/CRISPR_screen_analysis with -p"
+	echo -e "Please provide the path to /Xert_paper/CRISPR_screen_analysis/ with -p"
   exit 1
 fi
 
