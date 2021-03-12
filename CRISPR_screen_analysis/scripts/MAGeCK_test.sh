@@ -6,7 +6,7 @@ control_file=$2 # Path to list of non-targeting at /CRISPR_screen_analysis/files
 output_dir=$3
 
 
-mageck test -k $count_table -t "R1_High,R2_High" -c "R1_Unsorted,R2_Unsorted" --norm-method control \
+prun python3 mageck test -k $count_table -t "R1_High,R2_High" -c "R1_Unsorted,R2_Unsorted" --norm-method control \
     --control-sgrna $control_file --output-prefix ${output_dir}Xic_screen
-mageck test -k $count_table -t "R1_Negative,R2_Negative" -c "R1_Unsorted,R2_Unsorted" --norm-method control \
+prun python3 mageck test -k $count_table -t "R1_Negative,R2_Negative" -c "R1_Unsorted,R2_Unsorted" --norm-method control \
     --control-sgrna $control_file --output-prefix ${output_dir}Xic_screen
