@@ -9,5 +9,5 @@ output_dir=$4
 
 fastq_files=$(find -type f -regex "*.fastq" -printf "%f ")
 
-mageck count -l $library_file --fastq $fastq_files --norm-method control --control-sgrna $control_file \
+prun python3 mageck count -l $library_file --fastq $fastq_files --norm-method control --control-sgrna $control_file \
     --output-prefix ${output_dir}Xic_screen
