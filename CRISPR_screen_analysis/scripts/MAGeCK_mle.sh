@@ -6,7 +6,5 @@ design_matrix=$2 # Path to design matrix at /CRISPR_screen_analysis/files/design
 control_file=$3 # Path to list of non-targeting at /CRISPR_screen_analysis/files/nt_file.txt
 output_dir=$4
 
-fastq_files=$(find -type f -regex "*.fastq.gz" -printf "%f ")
-
-mageck mle -k $count_table -d $design_matrix --control-sgrna $control_file --norm-method control \
+prun python3 mageck mle -k $count_table -d $design_matrix --control-sgrna $control_file --norm-method control \
     --max-sgrnapergene-permutation 350 --output-prefix ${output_dir}Xic_screen
