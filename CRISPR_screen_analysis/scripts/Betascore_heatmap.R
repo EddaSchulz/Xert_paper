@@ -1,4 +1,4 @@
-#Script ranks RE's based on beta-score and plots the heatmap in figure 1E
+#Script ranks RE's based on beta-score and plots the heatmap in Figure 1F
 library(tidyverse)
 library(egg)
 library(gridExtra)
@@ -43,7 +43,7 @@ heatmap_plot <- heatmap_df %>%
   scale_x_discrete(expand = c(0, 0)) +
   labs(fill = "Beta score") 
 
-pdf("Fig_1f_betascore_heatmap.pdf", useDingbats = FALSE, onefile = FALSE)
+pdf("1F_betascore_heatmap.pdf", useDingbats = FALSE, onefile = FALSE)
 fix <- set_panel_size(heatmap_plot, width = unit(0.92, "cm"), height = unit(6, "cm"))
 
 print(grid.arrange(fix))
