@@ -1,4 +1,4 @@
-# Plots Supplementary Figs. 1i-j
+# Plots Figures S1E and S1I-J
 library(tidyverse)
 library(egg)
 library(gridExtra)
@@ -46,7 +46,7 @@ cumulative_plot <- cum_plot_df %>%
   xlim(5, 11) +
   labs(x = "Normalized sgRNA counts (log2)", y = "Cumulative sgRNA frequency")
 
-pdf("Sup_Fig_1i_cumulative_frequencies.pdf", onefile = FALSE, useDingbats = FALSE)
+pdf("S1I_cumulative_frequencies.pdf", onefile = FALSE, useDingbats = FALSE)
 fix <- set_panel_size(cumulative_plot, width = unit(2, "cm"), height = unit(2, "cm"))
 
 print(grid.arrange(fix))
@@ -59,7 +59,7 @@ cumulative_plasmid <- lib_counts %>%
   xlim(5, 11) +
   labs(x = "Normalized sgRNA counts (log2)", y = "Cumulative sgRNA frequency")
 
-pdf("Sup_Fig_1e_cumulative_plasmid_library.pdf", useDingbats = FALSE, onefile = FALSE)
+pdf("S1E_cumulative_plasmid_library.pdf", useDingbats = FALSE, onefile = FALSE)
 fix <- set_panel_size(cumulative_plasmid, width = unit(2, "cm"), height = unit(2, "cm"))
 
 print(grid.arrange(fix))
@@ -83,7 +83,7 @@ width_plot <- width_df %>%
   theme(axis.title.y = element_blank()) +
   xlim(1.5, 3)
 
-pdf("Sup_Fig_1j_log2_distribution_width.pdf", onefile = FALSE, useDingbats = FALSE)
+pdf("S1J_log2_distribution_width.pdf", onefile = FALSE, useDingbats = FALSE)
 fix <- set_panel_size(width_plot, width = unit(2, "cm"), height = unit(3, "cm"))
 
 print(grid.arrange(fix))
@@ -108,7 +108,7 @@ ntc_width_plot <- ntc_width_df %>%
   xlim(1, 2.5)
 
 
-pdf("Sup_Fig_1j_ntc_distribution_width.pdf", onefile = FALSE, useDingbats = FALSE)
+pdf("S1J_ntc_distribution_width.pdf", onefile = FALSE, useDingbats = FALSE)
 fix <- set_panel_size(ntc_width_plot, width = unit(2, "cm"), height = unit(3, "cm"))
 
 print(grid.arrange(fix))
