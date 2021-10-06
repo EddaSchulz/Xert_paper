@@ -1,5 +1,5 @@
 #!/bin/bash
-# Master script to analyze CRISPR screen with a bootstrapping approach
+# Master script to analyze CRISPR screen with a bootstrapping approach and plot Figures 1G and S1M
 work_dir=$(pwd)'/'
 path=''
 
