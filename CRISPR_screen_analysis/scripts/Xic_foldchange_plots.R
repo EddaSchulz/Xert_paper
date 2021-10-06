@@ -1,4 +1,4 @@
-#Plots Fig. 1d-e and Sup. Fig. 1k-l
+#Plots Figures 1D-E and S1K-L
 library(tidyverse)
 library(egg)
 library(gridExtra)
@@ -57,7 +57,7 @@ xic_plot_high <- ggplot() +
   ylim(-6, 2) +
   scale_x_continuous(limits = c(103198658, 104058961), expand = c(0.005, 0)) 
 
-pdf("Fig_1d_FC_xic_high.pdf",  useDingbats = FALSE, onefile = FALSE)
+pdf("1D_FC_xic_high.pdf",  useDingbats = FALSE, onefile = FALSE)
 fix <- set_panel_size(xic_plot_high, width = unit(16, "cm"), height = unit(5, "cm"))
 
 print(grid.arrange(fix))
@@ -73,7 +73,7 @@ xist_plot_high <- re_df %>%
   scale_x_continuous(limits = c(103430517, 103507425), expand = c(0, 0)) +
   ylim(0, 30)
 
-pdf("Fig_1e_FDR_xist_zoomin_high.pdf", useDingbats = FALSE, onefile = FALSE)
+pdf("1E_FDR_xist_zoomin_high.pdf", useDingbats = FALSE, onefile = FALSE)
 fix <- set_panel_size(xist_plot_high, width = unit(6, "cm"), height = unit(3, "cm"))
 
 print(grid.arrange(fix))
@@ -90,7 +90,7 @@ xert_plot_high <- re_df %>%
   scale_x_continuous(limits = c(103559910, 103698414), expand = c(0, 0)) +
   ylim(0, 30)
 
-pdf("Fig_1e_FDR_xert_zoomin_high.pdf", useDingbats = FALSE, onefile = FALSE)
+pdf("1E_FDR_xert_zoomin_high.pdf", useDingbats = FALSE, onefile = FALSE)
 fix <- set_panel_size(xert_plot_high, width = unit(6, "cm"), height = unit(3, "cm"))
 
 print(grid.arrange(fix))
@@ -116,7 +116,7 @@ xic_plot_negative <- ggplot() +
   ylim(-2, 3) +
   scale_x_continuous(limits = c(103198658, 104058961), expand = c(0.005, 0)) 
 
-pdf("Sup_Fig_1k_FC_xic_negative.pdf", useDingbats = FALSE, onefile = FALSE)
+pdf("S1K_FC_xic_negative.pdf", useDingbats = FALSE, onefile = FALSE)
 fix <- set_panel_size(xic_plot_negative, width = unit(16, "cm"), height = unit(5, "cm"))
 
 print(grid.arrange(fix))
@@ -132,7 +132,7 @@ xist_plot_negative <- re_sort %>%
   scale_x_continuous(limits = c(103430517, 103507425), expand = c(0, 0)) +
   ylim(0, 35)
 
-pdf("Sup_Fig_1l_FDR_xist_zoomin_negative.pdf", useDingbats  = FALSE, onefile =  FALSE)
+pdf("S1L_FDR_xist_zoomin_negative.pdf", useDingbats  = FALSE, onefile =  FALSE)
 fix <- set_panel_size(xist_plot_negative, width = unit(6, "cm"), height = unit(3, "cm"))
 
 print(grid.arrange(fix))
