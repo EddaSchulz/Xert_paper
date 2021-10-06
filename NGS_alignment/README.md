@@ -33,7 +33,7 @@ ChIP-seq (Gontan et al., 2012): Single-End ChIP-seq data for REX1 in XX mESCs wa
 
 ChIP-seq (Li et al., 2019): Single-End ChIP-seq data for SMAD2/3 in XY hESCs, as well as the corresponding input samples, was retrieved from GSE109524.
 
-ChIP-seq (Rada-Iglesias et al., 2011): Single-End ChIP-seq data for H3K4me1, H3K4me3, H3K27ac and P300 in XX hESCs, as well as the corresponding input samples, was retrieved from GSE28874.
+ChIP-seq (Rada-Iglesias et al., 2011): Single-End ChIP-seq data for H3K4me1, H3K4me3, H3K27ac and P300 in XX hESCs, as well as the corresponding input samples, was retrieved from GSE24447.
 
 ChIP-seq (Stadler et al., 2011): Single-End ChIP-seq data for CTCF in mESCs, as well as the corresponding input samples, was retrieved from GSE70486.
 
