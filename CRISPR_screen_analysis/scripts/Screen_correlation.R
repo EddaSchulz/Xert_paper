@@ -1,4 +1,4 @@
-#Plots Sup. Fig. 1h
+#Plots Figure S1H
 library(tidyverse)
 library(plyr)
 library(egg)
@@ -59,7 +59,7 @@ cor_plot <- counts_long %>%
   lims(y = c(0, NA), x = c(0, NA)) +
   labs(x = "Norm. counts (R1)", y = "Norm. counts (R2)")
 
-pdf("Sup_Fig_1h_screen_correlation.pdf", onefile = FALSE, useDingbats = FALSE)
+pdf("S1H_screen_correlation.pdf", onefile = FALSE, useDingbats = FALSE)
 fix <- set_panel_size(cor_plot, width = unit(2, "cm"), height = unit(2, "cm"))
 
 print(grid.arrange(fix))
