@@ -1,7 +1,7 @@
 # CRISPR screen analysis
 
 ## Description
-This folder contains all code that was used for alignment, counting and analysis of the CRISPR screen data in Gjaltema, Schwämmle 2021. 
+This folder contains all code that was used for alignment, counting and analysis of the CRISPR screen data in Gjaltema, Schwämmle et al., 2021. 
 
 ## Software dependencies and operating systems
 In order to perform these analyses, the following software has to be installed and available on the command line ($PATH):
