@@ -1,4 +1,4 @@
-#Script analyzes the FlowFISH data from the screen and plots histograms for figure S1E
+#Script analyzes the FlowFISH data from the screen and plots histograms for Figure S1G
 library(flowCore)
 library(openCyto)
 library(tidyverse)
