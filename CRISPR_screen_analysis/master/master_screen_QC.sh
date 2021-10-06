@@ -1,6 +1,6 @@
 #!/bin/bash
 # Master script for QC of the CRISPR screen
-# Plots Figures S1E and SH-J
+# Plots Figures S1E and S1H-J
 work_dir=$(pwd)'/'
 path=''
 
