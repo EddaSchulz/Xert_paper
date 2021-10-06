@@ -1,4 +1,4 @@
-#Script to plot Sup Fig. 1b-d
+#Script to plot Figures S1B-D
 library(tidyverse)
 library(UpSetR)
 library(gridExtra)
@@ -23,7 +23,7 @@ upset_df <- char_res_df %>%
   select(id, atac, starr, fantom5) %>%
   mutate_at(vars(-id), funs(ifelse(. == TRUE, 1, 0)))
 
-pdf(file = "Sup_Fig_1b_upsetR_library.pdf", onefile = FALSE, height = unit(3, 'cm'), width = unit(3, 'cm')
+pdf(file = "S1B_upsetR_library.pdf", onefile = FALSE, height = unit(3, 'cm'), width = unit(3, 'cm')
     , useDingbats = FALSE)
 print(upset(upset_df, order.by = "freq"))
 dev.off()
@@ -34,7 +34,7 @@ length_plot <- char_res_df  %>%
   labs(x = "RE length", y = "Cumulative frequency")
 
 
-pdf("Sup_Fig_1c_RE_length.pdf", onefile = FALSE, useDingbats = FALSE)
+pdf("S1C_RE_length.pdf", onefile = FALSE, useDingbats = FALSE)
 fix <- set_panel_size(length_plot, width = unit(2, "cm"), height = unit(2, "cm"))
 
 print(grid.arrange(fix))
@@ -47,7 +47,7 @@ nguides_plot <- char_res_df %>%
   labs(x = "Nr. of sgRNAs / RE", y = "Cumulative frequency") +
   xlim(0, 300)
 
-pdf("Sup_Fig_1d_RE_nguides.pdf", onefile = FALSE, useDingbats = FALSE)
+pdf("S1D_RE_nguides.pdf", onefile = FALSE, useDingbats = FALSE)
 fix <- set_panel_size(nguides_plot, width = unit(2, "cm"), height = unit(2, "cm"))
 
 print(grid.arrange(fix))
