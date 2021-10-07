@@ -37,7 +37,7 @@ ChIP-seq (Rada-Iglesias et al., 2011): Single-End ChIP-seq data for H3K4me1, H3K
 
 ChIP-seq (Stadler et al., 2011): Single-End ChIP-seq data for CTCF in mESCs, as well as the corresponding input samples, was retrieved from GSE70486.
 
-ChIP-seq (Tu et al. 2016): Single-End ChIP-seq data for PRDM14 in mESCs was retrieved from GSE71675.
+ChIP-seq (Tu et al., 2016): Single-End ChIP-seq data for PRDM14 in mESCs was retrieved from GSE71675.
 
 ChIP-seq (Wang et al., 2017): Paired-End ChIP-seq data for SMAD2/3 and TCF3 in mESCs and embryoid bodies, as well as the corresponding input samples, was retrieved from GSE30203.
 
