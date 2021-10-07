@@ -41,7 +41,7 @@ ChIP-seq (Tu et al. 2016): Single-End ChIP-seq data for PRDM14 in mESCs was retr
 
 ChIP-seq (Wang et al., 2017): Paired-End ChIP-seq data for SMAD2/3 and TCF3 in mESCs and embryoid bodies, as well as the corresponding input samples, was retrieved from GSE30203.
 
-ChIP-seq (Zyclicz et al. 2019): Paired-End ChIP-seq data for H3K4me1, H3K4me3, H3K27ac, H3K27me3 and H2AK119ub in TX1072 XX mESCs was retrieved from GSE116990.
+ChIP-seq (Zyclicz et al., 2019): Paired-End ChIP-seq data for H3K4me1, H3K4me3, H3K27ac, H3K27me3 and H2AK119ub in TX1072 XX mESCs was retrieved from GSE116990.
 
 GRO-seq (Wang et al., 2015): Single-End GRO-seq data in XY ESCs was retrieved from GSE54471.
 
