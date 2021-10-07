@@ -1,16 +1,16 @@
 #!/bin/bash
-# Master script to align ChIPseq data from Wang et al., 2017 (GSE70486)
+# Master script to align RNA-seq data from Söllner et al., 2017 (E-MTAB-6081)
 fastq_dir=''
 work_dir=$(pwd)'/'
 path=''
 
 help() {
-   echo "Builds mm10 genome, aligns and processes ChIPseq data from Wang et al. 2017, Calls peaks and creates coverage tracks."
+   echo "Builds mm10 genome, aligns and processes published RNA-seq data from Söllner et al., 2017 (E-MTAB-6081)."
    echo
-   echo "Syntax: ./master_Wang_ChIPseq.sh [-d|f|p|h]"
+   echo "Syntax: ./master_Soellner_RNAseq.sh [-d|f|p|h]"
    echo "options:"
    echo "d     Provide working directory. [optional]"
-   echo "f     Provide directory containing FASTQ files (GSE70486). [mandatory]"
+   echo "f     Provide directory containing FASTQ files (E-MTAB-6081). [mandatory]"
    echo "h     Prints this help."
    echo "p     Provide path to /Xert_paper/NGS_alignment/. [mandatory]"
    echo
@@ -45,13 +45,13 @@ done
 
 if [[ $path == '' ]]
 then
-	echo -e "Please provide a path to /Xert_paper/NGS_alignment with -p"
+	echo -e "Please provide a path to /Xert_paper/NGS_alignment/ with -p"
   exit 1
 fi
 
 if [[ $fastq_dir == '' ]]
 then
-	echo -e "Please provide a path to ChIPseq FASTQ files from Wang et al. 2017 (GSE70486) with -f"
+	echo -e "Please provide a path to RNA-seq FASTQ files from Söllner et al., 2017 (E-MTAB-6081) with -f"
   exit 1
 fi
 
@@ -60,20 +60,13 @@ work_dir=$(realpath $work_dir)'/'
 path=$(realpath $path)'/'
 
 genome=${path}files/mm10.fa
+gtf=${path}files/GENCODE_vM25_plus_Xert.gtf
 
 
-# Build genome index for bowtie2 from mm10 genome
-${path}scripts/build_bowtie2.sh $path $work_dir $genome
+# Build genome index for STAR from mm10 genome
+${path}scripts/STAR_genomeGenerate.sh $path $work_dir $genome $gtf
 
-ebwt=${work_dir}genome/mm10
+ebwt=${work_dir}genome/
 
 # Aligns FASTQ files and performs filtering steps
-${path}scripts/Wang_ChIPseq_align.sh $path $fastq_dir $work_dir $ebwt
-
-bam_dir=${work_dir}final_bam'/'
-
-# Calls peaks
-${path}scripts/Wang_peaks.sh $work_dir $bam_dir
-
-# Generates coverage tracks
-${path}scripts/extended_bigwig.sh $work_dir $bam_dir
+${path}scripts/Deng_Petropoulos_Soellner_RNAseq_align.sh $path $fastq_dir $work_dir $ebwt

@@ -1,16 +1,16 @@
 #!/bin/bash
-# Master script to align ChIPseq data from Zylicz et al., 2019 (GSE116990)
+# Master script to align ATAC-seq data from Guo et al., 2017, call peaks and create coverage tracks
 fastq_dir=''
 work_dir=$(pwd)'/'
 path=''
 
 help() {
-   echo "Builds masked mm10 genome, aligns and processes ChIPseq data from Zylicz et al., 2019."
+   echo "Builds hg38 genome, aligns and processes ATAC-seq data from Guo et al., 2017. Also calls peaks and creates coverage tracks."
    echo
-   echo "Syntax: ./master_Zylicz_ChIPseq.sh [-d|f|p|h]"
+   echo "Syntax: ./master_Guo_ATACseq.sh [-d|f|p|h]"
    echo "options:"
    echo "d     Provide working directory. [optional]"
-   echo "f     Provide directory containing FASTQ files (GSE116990). [mandatory]"
+   echo "f     Provide directory containing FASTQ files (GSE92280). [mandatory]"
    echo "h     Prints this help."
    echo "p     Provide path to /Xert_paper/NGS_alignment/. [mandatory]"
    echo
@@ -51,7 +51,7 @@ fi
 
 if [[ $fastq_dir == '' ]]
 then
-	echo -e "Please provide a path to ChIPseq FASTQ files from Zylicz et al. (GSE116990) with -f"
+	echo -e "Please provide a path to ATAC-seq FASTQ files from Guo et al., 2017 (GSE92280) with -f"
   exit 1
 fi
 
@@ -59,18 +59,28 @@ fastq_dir=$(realpath $fastq_dir)'/'
 work_dir=$(realpath $work_dir)'/'
 path=$(realpath $path)'/'
 
-genome=${path}files/N_masked_B6_Cast.fa
+genome=${path}files/hg38.fa
 
 
-# Build genome index for bowtie2 from N_masked mm10 genome
-${path}scripts/build_bowtie2.sh $path $work_dir $genome
+# Build genome index for bowtie2 from hg38 genome
+${path}scripts/build_bowtie2_hg38.sh $path $work_dir $genome
 
-ebwt=${work_dir}genome/mm10
+ebwt=${work_dir}genome/hg38
 
 # Aligns FASTQ files and performs filtering steps
-${path}scripts/CUTnTag_align.sh $path $fastq_dir $work_dir $ebwt
+${path}scripts/ATACseq_align.sh $path $fastq_dir $work_dir $ebwt ${path}files/hg38.bl.bed
 
 bam_dir=${work_dir}final_bam'/'
 
+
+# Calls peaks for replicates and merges them
+${path}scripts/ATAC_peaks.sh $work_dir $bam_dir
+
+
 # Merges replicate BAM files
-${path}scripts/merge_blacklisted_BAM.sh $work_dir $bam_dir
+${path}scripts/merge_dedup_BAM.sh $work_dir $bam_dir
+
+merged_bam_dir=${work_dir}merged_bam'/'
+
+# Generates coverage tracks
+${path}scripts/extended_bigwig.sh $work_dir $merged_bam_dir

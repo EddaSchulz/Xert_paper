@@ -1,16 +1,16 @@
 #!/bin/bash
-# Master script to align ChIPseq data from Wang et al., 2017 (GSE70486)
+# Master script to align ChIPseq data from Bleckwehl et al., 2021 (GSE155089), Chronis et al., 2017 (GSE90893), Gontan et al., 2012 (GSE36417), Tu et al., 2016 (GSE71675)
 fastq_dir=''
 work_dir=$(pwd)'/'
 path=''
 
 help() {
-   echo "Builds mm10 genome, aligns and processes ChIPseq data from Wang et al. 2017, Calls peaks and creates coverage tracks."
+   echo "Builds mm10 genome, aligns and processes unpaired ChIP-seq data. Also creates coverage tracks."
    echo
-   echo "Syntax: ./master_Wang_ChIPseq.sh [-d|f|p|h]"
+   echo "Syntax: ./master_Bleckwehl_Chronis_Gontan_Tu_ChIPseq.sh [-d|f|p|h]"
    echo "options:"
    echo "d     Provide working directory. [optional]"
-   echo "f     Provide directory containing FASTQ files (GSE70486). [mandatory]"
+   echo "f     Provide directory containing FASTQ files (GSE155089/GSE90893/GSE36417/GSE71675). [mandatory]"
    echo "h     Prints this help."
    echo "p     Provide path to /Xert_paper/NGS_alignment/. [mandatory]"
    echo
@@ -45,13 +45,13 @@ done
 
 if [[ $path == '' ]]
 then
-	echo -e "Please provide a path to /Xert_paper/NGS_alignment with -p"
+	echo -e "Please provide a path to /Xert_paper/NGS_alignment/ with -p"
   exit 1
 fi
 
 if [[ $fastq_dir == '' ]]
 then
-	echo -e "Please provide a path to ChIPseq FASTQ files from Wang et al. 2017 (GSE70486) with -f"
+	echo -e "Please provide a path to ChIPseq FASTQ files from Bleckwehl et al., 2021 (GSE155089), Chronis et al., 2017 (GSE90893), Gontan et al., 2012 (GSE36417) or Tu et al., 2016 (GSE71675) with -f"
   exit 1
 fi
 
@@ -61,19 +61,15 @@ path=$(realpath $path)'/'
 
 genome=${path}files/mm10.fa
 
-
 # Build genome index for bowtie2 from mm10 genome
 ${path}scripts/build_bowtie2.sh $path $work_dir $genome
 
 ebwt=${work_dir}genome/mm10
 
 # Aligns FASTQ files and performs filtering steps
-${path}scripts/Wang_ChIPseq_align.sh $path $fastq_dir $work_dir $ebwt
+${path}scripts/Unpaired_ChIPseq_align.sh $path $fastq_dir $work_dir $ebwt ${path}files/mm10.bl.bed
 
 bam_dir=${work_dir}final_bam'/'
 
-# Calls peaks
-${path}scripts/Wang_peaks.sh $work_dir $bam_dir
-
 # Generates coverage tracks
-${path}scripts/extended_bigwig.sh $work_dir $bam_dir
+${path}scripts/generate_bigwig.sh $work_dir $bam_dir
