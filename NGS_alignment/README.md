@@ -41,7 +41,7 @@ ChIP-seq (Tu et al., 2016): Single-End ChIP-seq data for PRDM14 in mESCs was ret
 
 ChIP-seq (Wang et al., 2017): Paired-End ChIP-seq data for SMAD2/3 and TCF3 in mESCs and embryoid bodies, as well as the corresponding input samples, was retrieved from GSE30203.
 
-ChIP-seq (Zyclicz et al., 2019): Paired-End ChIP-seq data for H3K4me1, H3K4me3, H3K27ac, H3K27me3 and H2AK119ub in TX1072 XX mESCs was retrieved from GSE116990.
+ChIP-seq (Zylicz et al., 2019): Paired-End ChIP-seq data for H3K4me1, H3K4me3, H3K27ac, H3K27me3 and H2AK119ub in TX1072 XX mESCs was retrieved from GSE116990.
 
 GRO-seq (Wang et al., 2015): Single-End GRO-seq data in XY ESCs was retrieved from GSE54471.
 
@@ -72,9 +72,9 @@ In order to perform these analyses, the following software has to be installed a
 
 
 ## Reproduce analysis
-The alignment and data processing for the respective NGS data types can be performed using the master scripts stored in the "NGS_alignment/master/" directory. For all master scripts the respective FASTQ files have to be downloaded from GEO and renamed according to "NGS_alignment/files/rename_GSM.txt". The mm10 reference genome needs to be downloaded from ncbi and stored as "/NGS_alignment/files/mm10.fa" (https://www.ncbi.nlm.nih.gov/assembly/GCF_000001635.20/). The B6/Cast-masked mm10 genome has to be prepared according to https://github.com/EddaSchulz/Pacini_paper and stored as "/NGS_alignment/files/N_masked_B6_Cast.fa". Gene annotation (as GTF) has to be downloaded from https://www.gencodegenes.org/mouse/release_M25.html, appended with "/NGS_alignment/files/Xert.gtf" and stored as "/NGS_alignment/files/GENCODE_vM25_plus_Xert.gtf". For human data, the hg38 reference genome needs to be downloaded from ncbi and stored as "/NGS_alignment/files/hg38.fa" (https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.26/)
+The alignment and data processing for the respective NGS data types can be performed using the master scripts stored in the "NGS_alignment/master/" directory. For all master scripts the respective FASTQ files have to be downloaded from GEO or Array Express and renamed according to "NGS_alignment/files/rename_GSM.txt". For the pseudobulk single cell analyses, the included cells are listed in "NGS_alignment/files/Deng_sample_info.txt" and "NGS_alignment/files/Petropoulos_sample_info.txt". The mm10 reference genome needs to be downloaded from ncbi and stored as "/NGS_alignment/files/mm10.fa" (https://www.ncbi.nlm.nih.gov/assembly/GCF_000001635.20/). The B6/Cast-masked mm10 genome has to be prepared according to https://github.com/EddaSchulz/Pacini_paper and stored as "/NGS_alignment/files/N_masked_B6_Cast.fa". Gene annotation (as GTF) has to be downloaded from https://www.gencodegenes.org/mouse/release_M25.html, appended with "/NGS_alignment/files/Xert.gtf" and stored as "/NGS_alignment/files/GENCODE_vM25_plus_Xert.gtf". For human data, the hg38 reference genome needs to be downloaded from ncbi and stored as "/NGS_alignment/files/hg38.fa" (https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.26/). Gene annotation has to be downloaded from https://www.gencodegenes.org/human/ and stored as "/NGS_alignment/files/GENCODE_vH38.gtf".
 
-For all scripts, it is necessary to provide a path to "Xert_paper/NGS_alignment/" (with -p) and the directory containing the FASTQ files (with -f). A work directory can be supplied with -d.
+For all scripts, it is necessary to provide a path to "Xert_paper/NGS_alignment/" (with -p) and the directory containing the FASTQ files (with -f). A working directory can be supplied with -d.
 
 - (i)   "master_ATACseq.sh": Builds masked mm10 genome, aligns and processes ATAC-seq data, calls peaks and creates coverage tracks.
 - (ii)  "master_CUTnTag.sh": Builds masked mm10 genome, aligns and processes CUT&Tag data, calls peaks and creates coverage tracks.
@@ -86,5 +86,8 @@ For all scripts, it is necessary to provide a path to "Xert_paper/NGS_alignment/
 - (viii) "master_Wang_ChIPseq.sh": Builds mm10 genome, aligns and processes ChIPseq data from Wang et al. 2017, Calls peaks and creates coverage tracks.
 - (ix) "master_Zhang_RNAseq.sh": Builds mm10 genome, aligns and processes embryo RNA-seq data from Zhang et al. 2018.
 - (x) "master_Zylicz_ChIPseq.sh": Builds masked mm10 genome, aligns and processes ChIPseq data from Zylicz et al. 2019.
+
+Deng -> all FASTQ files of single cells should be named according to their SRR number (SRRXXX.fastq) 
+Petropoulos -> All FASTQ files of single cells should be named according to their ERR number (ERRXXX.fastq).
 
 All scripts that are used by the master scripts are stored in "/NGS_alignment/scripts/". All files that are necessary to run the master scripts, other than those mentioned above (FASTQ files, genome annotation files), are stored in "/NGS_alignment/files/".
