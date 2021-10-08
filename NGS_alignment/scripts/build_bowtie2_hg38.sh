@@ -3,7 +3,7 @@
 
 path=$1
 work_dir=$2
-genome=$3 # hg38 is found at /NGS_alignment/files/
+genome=$3 
 
 mkdir -p  ${work_dir}genome
 
