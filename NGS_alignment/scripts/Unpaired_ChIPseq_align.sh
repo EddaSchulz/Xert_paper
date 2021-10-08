@@ -1,11 +1,12 @@
 #!/bin/bash
-# Performs alignment and filtering of ChIP-seq data from Buecker et al. 2014 and Stadler et al. 2011
+# Performs alignment and filtering of unpaired ChIP-seq data
 
 path=$1
-fastq_dir=$2 # FASTQ files can be found at GSE56098 and GSE30203
+fastq_dir=$2 # Provide path to FASTQ files
 work_dir=$3
-ebwt=$4 # mm10 genome (prepared with build_bowtie2.sh)
-echo "$ebwt"
+ebwt=$4 # genome prepared with build_bowtie2.sh
+bl_file=$5 # Should link to bed with blacklisted regions
+
 
 cd $work_dir
 
@@ -22,7 +23,7 @@ do
 	cd ${data_dir}
 
 	echo -e "Trimming $f with trim_galore"
-	prun python3 trim_galore  --illumina ${fastq_dir}$f\.fastq >> $f\_trimmingStats.txt 2>&1
+	prun python3 trim_galore --illumina ${fastq_dir}$f\.fastq >> $f\_trimmingStats.txt 2>&1
 
 	echo -e "Mapping $f with bowtie2"
 	bowtie2 --very-sensitive -x $ewbt -U $f\_trimmed.fq -S $f\.sam > $f\_mappingReport.txt
@@ -36,7 +37,7 @@ do
 	samtools sort -m 1G $f\.bam -T $f\_sorted -o $f\_sorted.bam
 
 	echo -e "Removing Blacklisted regions from $f"
-	bedtools intersect -v -a $f\_sorted.bam -b $blacklistmm10 > $f\_sorted_blacklisted.bam
+	bedtools intersect -v -a $f\_sorted.bam -b $bl_file > $f\_sorted_blacklisted.bam
 
 	echo -e "Removing duplicates from $f using PICARD\n"
 	java -jar picard.jar MarkDuplicates INPUT=$f\_sorted_blacklisted.bam \

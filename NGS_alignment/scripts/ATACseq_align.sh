@@ -2,9 +2,10 @@
 # Performs alignment and filtering of ATAC-seq data
 
 path=$1
-fastq_dir=$2 # FASTQ files can be found at GSE167350
+fastq_dir=$2 # should contain FASTQ files
 work_dir=$3
-ebwt=$4 # B6/Cast masked genome (prepared with build_bowtie2.sh)
+ebwt=$4 # genome prepared with build_bowtie2.sh
+bl_file=$5 # Should link to bed with blacklisted regions
 
 
 cd $work_dir
@@ -43,7 +44,7 @@ do
 	samtools sort -m 1G $f\.bam -T $f\_sorted -o $f\_sorted.bam
 
 	echo -e "Removing Blacklisted regions from $f"
-	bedtools intersect -v -a $f\_sorted.bam -b ${path}files/mm10.bl.bed > $f\_sorted_blacklisted.bam
+	bedtools intersect -v -a $f\_sorted.bam -b $bl_file > $f\_sorted_blacklisted.bam
 
 	echo -e "Removing duplicates from $f using PICARD"
 	java -jar ${path}software/picard-2.18.25/picard.jar MarkDuplicates INPUT=$f\_sorted_blacklisted.bam \
