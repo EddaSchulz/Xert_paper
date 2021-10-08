@@ -76,18 +76,24 @@ The alignment and data processing for the respective NGS data types can be perfo
 
 For all scripts, it is necessary to provide a path to "Xert_paper/NGS_alignment/" (with -p) and the directory containing the FASTQ files (with -f). A working directory can be supplied with -d.
 
-- (i)   "master_ATACseq.sh": Builds masked mm10 genome, aligns and processes ATAC-seq data, calls peaks and creates coverage tracks.
-- (ii)  "master_CUTnTag.sh": Builds masked mm10 genome, aligns and processes CUT&Tag data, calls peaks and creates coverage tracks.
-- (iii) "master_pA-RNAseq.sh": Builds masked mm10 genome, aligns and processes pA-RNAseq data and creates coverage tracks.
-- (iv)  "master_RNAseq.sh": Builds masked mm10 genome, aligns and processes RNA-seq data.
-- (v) "master_STARRseq.sh": Builds mm10 genome, aligns and processes STARR-seq data.
-- (vi) "master_TTseq.sh": Builds masked mm10 genome, aligns and processes TT-seq data and creates coverage tracks.
-- (vii) "master_unpaired_ChIPseq.sh": Builds mm10 genome, aligns and processes ChIP-seq data from Buecker et al. 2014 and Stadler et al. 2011, calls peaks and creates coverage tracks.
-- (viii) "master_Wang_ChIPseq.sh": Builds mm10 genome, aligns and processes ChIPseq data from Wang et al. 2017, Calls peaks and creates coverage tracks.
-- (ix) "master_Zhang_RNAseq.sh": Builds mm10 genome, aligns and processes embryo RNA-seq data from Zhang et al. 2018.
-- (x) "master_Zylicz_ChIPseq.sh": Builds masked mm10 genome, aligns and processes ChIPseq data from Zylicz et al. 2019.
-
-Deng -> all FASTQ files of single cells should be named according to their SRR number (SRRXXX.fastq) 
-Petropoulos -> All FASTQ files of single cells should be named according to their ERR number (ERRXXX.fastq).
+- (i)     "master_ATACseq.sh": Builds masked mm10 genome, aligns ATAC-seq data, calls peaks and creates coverage tracks.
+- (ii)    "master_CUTnTag.sh": Builds masked mm10 genome, aligns CUT&Tag data, calls peaks and creates coverage tracks.
+- (iii)   "master_pA-RNAseq.sh": Builds masked mm10 genome, aligns pA-RNAseq data and creates coverage tracks.
+- (iv)    "master_RNAseq.sh": Builds masked mm10 genome and aligns RNA-seq data.
+- (v)     "master_STARRseq.sh": Builds mm10 genome and aligns STARR-seq data.
+- (vi)    "master_TTseq.sh": Builds masked mm10 genome, aligns TT-seq data and creates coverage tracks.
+- (vii)   "master_Bauer_Wang_Zhang_RNAseq.sh": Builds mm10 genome and aligns RNA-seq data from Bauer et al., 2021, Wang et al., 2019 and Zhang et al., 2018.
+- (viii)  "master_Bleckwehl_ATACseq.sh": Builds mm10 genome, aligns and creates coverage tracks of ATAC-seq data from Bleckwehl et al., 2021. 
+- (ix)    "master_Bleckwehl_Chronis_Gontan_Tu_ChIPseq.sh": Builds MM10 genome, aligns and creates coverage tracks of ChIP-seq data from Bleckwehl et al., 2021, Chronis et al., 2017, Gontan et al., 2012 or Tu et al., 2016.
+- (x)     "master_Buecker_Stadler_ChIPseq.sh": Builds mm10 genome, aligns, calls peaks and creates coverage tracks of ChIP-seq data from Buecker et al., 2014 and Stadler et al., 2011.
+- (xi)    "master_Guo_ATACseq.sh": Builds hg38 genome, aligns, calls peaks and creates coverage tracks of ATAC-seq data from Guo et al., 2017.
+- (xii)   "master_Li_ChIPseq.sh": Builds hg38 genome, aligns, calls peaks and creates coverage tracks of ChIP-seq data from Li et al., 2019.
+- (xiii)  "master_Rada-Iglesias_ChIPseq.sh": Builds hg38 genome, aligns, calls peaks and creates coverage tracks of ChIP-seq data from Rada-Iglesias et al., 2011.
+- (xiv)   "master_Soellner_RNAseq.sh": Builds mm10 genome and aligns RNA-seq data from Söllner et al., 2017.
+- (xv)    "master_Wang_ChIPseq.sh": Builds mm10 genome, aligns ChIPseq data from Wang et al., 2017, calls peaks and creates coverage tracks.
+- (xvi)   "master_Wang_GROseq.sh": Builds hg38 genome, aligns GROseq data from Wang et al., 2015 and creates coverage tracks.
+- (xvii)  "master_Zylicz_ChIPseq.sh": Builds masked mm10 genome, aligns and processes ChIPseq data from Zylicz et al. 2019.
+- (xvii)  "master_Deng_pseudobulk_scRNAseq.sh": Creates pseudobulk of scRNA-seq data from Deng et al., 2014 according to their developmental timepoint. Subsequently, builds mm10 genome and aligns pseudobulk data. All FASTQ files of single cells should be renamed according to their SRR number (SRRXXX.fastq)
+- (xviii) "master_Petropoulos_pseudobulk_scRNAseq.sh": Creates pseudobulk of scRNA-seq data from Petropoulos et al., 2016 according to their developmental timepoint. Subsequently, builds hg38 genome and aligns pseudobulk data. All FASTQ files of single cells should be renamed according to their ERR number (ERRXXX.fastq)
 
 All scripts that are used by the master scripts are stored in "/NGS_alignment/scripts/". All files that are necessary to run the master scripts, other than those mentioned above (FASTQ files, genome annotation files), are stored in "/NGS_alignment/files/".
