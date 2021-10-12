@@ -67,7 +67,7 @@ TPM <- counts %>%
 
 setwd(output_dir)
 
-write_delim(counts, "S3E_adult_rnaseq_counts.txt", delim = "\t")
+write_delim(TPM, "S3E_adult_rnaseq_TPM.txt", delim = "\t")
 
 
 TPM_long <- TPM %>%
