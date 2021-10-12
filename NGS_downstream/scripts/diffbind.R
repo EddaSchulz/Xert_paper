@@ -38,7 +38,7 @@ diffbind_prep <- rbind(atac_prep, cnt_prep) %>%
 #Create dataframe containing all comparisons
 comps <- c("clone_d0", "clone_d2", "clone_d4", "diff_d2", "diff_d4")
 treatA <- c("XXdXic_d0", "XXdXic_d2", "XXdXic_d4", "XXdXic_d0", "XXdXic_d0")
-treatB <- c("XO_d0", "XO_d2", "XO_d4", "XXdXic_d4", "XXdXic_d4")
+treatB <- c("XO_d0", "XO_d2", "XO_d4", "XXdXic_d2", "XXdXic_d4")
 Factor <- c("ATAC", "H3K4me3", "H3K27ac", "H3K4me1")
 
 comp_treatments <- data.frame(comps, treatA, treatB) 

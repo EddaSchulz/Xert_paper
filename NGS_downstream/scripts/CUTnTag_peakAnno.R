@@ -1,4 +1,4 @@
-#The script plots peak annotation for Supplementary Figure 2f from the d0 samples from the XXdXIC cell line
+#The script plots peak annotation for Figure S2E from the d0 samples from the XXdXIC cell line
 library(TxDb.Mmusculus.UCSC.mm10.knownGene)
 library(tidyverse)
 library(egg)
@@ -55,7 +55,7 @@ anno_plot <- total_peakAnno %>%
   scale_fill_manual(values = brewer.pal(7, "Set1")[c(1,2,3,4,5,7)])
 
 
-pdf("Sup_Fig_2f_CUTnTag_peakAnno.pdf", useDingbats = FALSE, onefile = FALSE)
+pdf("S2E_CUTnTag_peakAnno.pdf", useDingbats = FALSE, onefile = FALSE)
 fix <- set_panel_size(anno_plot, width = unit(3, "cm"), height = unit(2, "cm"))
 
 print(grid.arrange(fix))

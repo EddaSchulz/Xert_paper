@@ -1,4 +1,4 @@
-#This script plots the emission states of the ChromHMM analysis for Supplementary Fig. 4h 
+#This script plots the emission states of the ChromHMM analysis for Figure S2H
 #Requires the emmision state .txt file from /NGS_downstream/ChromHMM.sh as input
 library(tidyverse)
 library(egg)
@@ -35,7 +35,7 @@ state_plot <- emissions %>%
   scale_fill_gradient(low = "white", high = "blue", limits = c(0, 1), breaks = c(0, 0.5, 1)) +
   labs(y = "State (Emission order)", fill = "Signal strength [a.u.]")
 
-pdf("Sup_Fig_2h_ChromHMM_States.pdf", useDingbats = FALSE, onefile = FALSE)
+pdf("S2H_ChromHMM_States.pdf", useDingbats = FALSE, onefile = FALSE)
 fix <- set_panel_size(state_plot, width = unit(1.25, "cm"), height = unit(3, "cm"))
 
 print(grid.arrange(fix))
