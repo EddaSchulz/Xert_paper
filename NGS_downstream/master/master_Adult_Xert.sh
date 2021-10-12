@@ -1,5 +1,5 @@
 #!/bin/bash
-# Master script for the LFC heatmap in Figures 2J
+# Master script to calculate TPM values for adult/differentiated RNA-seq samples (Soellner et al., 2017, Bauer et al., 2021, Wang et al., 2019)
 cnt_dir=''
 atac_dir=''
 work_dir=$(pwd)'/'
@@ -10,8 +10,9 @@ help() {
    echo
    echo "Syntax: ./master_RE_heatmap.sh [-a|b|c|d|p|t|h]"
    echo "options:"
-   echo "a     Provide directory containing BAM files (Buecker et al., 2014). [mandatory]"
-   echo "b     Provide directory containing BAM files (Wang et al., 2017). [mandatory]"
+   echo "a     Provide directory containing BAM files from adult mouse tissues (Soellner et al., 2017). [mandatory]"
+   echo "b     Provide directory containing BAM files from mouse NPCs (Bauer et al., 2021). [mandatory]"
+   echo "c     Provide directory containing BAM files from mouse MEFs (Wang et al., 2019). [mandatory]"
    echo "d     Provides working directory (Standard is current directory)."
    echo "h     Prints this help."
    echo "p     Provide path to /Xert_paper/NGS_downstream/. [mandatory]"
@@ -21,7 +22,10 @@ help() {
 parse_args() {
     case "$1" in
         -a)
-            bueck_dir="$2"
+            soellner_dir="$2"
+            ;;
+        -b)
+            bauer_dir="$2"
             ;;
         -b)
             wang_dir="$2"
@@ -54,23 +58,32 @@ then
   exit 1
 fi
 
-if [[ $bueck_dir == '' ]]
+if [[ $soellner_dir == '' ]]
 then
-	echo -e "Please provide the path to a directory containing Buecker et al., 2014 BAM files with -a"
+	echo -e "Please provide the path to a directory containing Soellner al., 2017 BAM files with -a"
+  exit 1
+fi
+
+if [[ $bauer_dir == '' ]]
+then
+	echo -e "Please provide the path to a directory containing Bauer et al., 2021 BAM files with -b"
   exit 1
 fi
 
 if [[ $wang_dir == '' ]]
 then
-	echo -e "Please provide the path to a directory containing Wang et al., 2017 BAM files with -b"
+	echo -e "Please provide the path to a directory containing Wang et al., 2019 BAM files with -c"
   exit 1
 fi
 
-bueck_dir=$(realpath $bueck_dir)'/'
+soellner_dir=$(realpath $soellner_dir)'/'
+bauer_dir=$(realpath $bauer_dir)'/'
 wang_dir=$(realpath $wang_dir)'/'
 work_dir=$(realpath $work_dir)'/'
 path=$(realpath $path)'/'
 
-# Plots heatmap
-echo -e "Plots Figure 2J"
-Rscript ${path}scripts/TF_heatmap.R $bueck_dir $wang_dir ${path}files/candidate_re.saf $work_dir
+gencode=${path}files/GENCODE_vM25_plus_Xert.gtf
+
+# Calculates TPM and plots values for Xert
+echo -e "Calculates TPM and plots figure S3E"
+Rscript ${path}scripts/TPM_adult_Xert.R $soellner_dir $bauer_dir $wang_dir $gencode $work_dir
