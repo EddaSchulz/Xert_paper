@@ -6,7 +6,7 @@ path=''
 help() {
    echo "Plots results from Cistrome-DB toolkit analysis on Xert REs."
    echo
-   echo "Syntax: ./master_cistrome_search.sh [-d|p|h]"
+   echo "Syntax: ./master_CistromeDB_search.sh [-d|p|h]"
    echo "options:"
    echo "d     Provides working directory (Standard is current directory)."
    echo "h     Prints this help."
