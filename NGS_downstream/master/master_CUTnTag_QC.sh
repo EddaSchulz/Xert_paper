@@ -1,5 +1,5 @@
 #!/bin/bash
-# Master script to generate Supplementary Figures 2e-g
+# Master script to generate Supplementary Figures 2D-F
 bam_dir=''
 merged_bam_dir=''
 work_dir=$(pwd)'/'

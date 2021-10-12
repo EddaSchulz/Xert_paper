@@ -1,12 +1,12 @@
 #!/bin/bash
-# Master script to identify CTCF binding sites for Figures 7A-B and S7A-B
+# Master script to plot the results of the Cistrome-DB toolkit analysis for Figure S2L
 work_dir=$(pwd)'/'
 path=''
 
 help() {
-   echo "Prepares CTCF .tsv file from FIMO for use in UCSC (to visualize CBS)."
+   echo "Plots results from Cistrome-DB toolkit analysis on Xert REs."
    echo
-   echo "Syntax: ./master_CTCFtrack.sh [-d|p|h]"
+   echo "Syntax: ./master_cistrome_search.sh [-d|p|h]"
    echo "options:"
    echo "d     Provides working directory (Standard is current directory)."
    echo "h     Prints this help."
@@ -47,6 +47,6 @@ fi
 work_dir=$(realpath $work_dir)'/'
 path=$(realpath $path)'/'
 
-# Uses .tsv file from FIMO to create colored BED track for UCSC
-echo -e "Generating CBS track"
-Rscript ${path}scripts/generate_CBS_bed.R ${path}files/ $work_dir
+# Uses TSV output from cistrome DB-toolkit to plot the enrichment of the top 15 TF's within Xert
+echo -e "Plots Cistrome DB toolkit analysis"
+Rscript ${path}scripts/cistrome_plot.R ${path}files/ $work_dir

@@ -1,17 +1,17 @@
 #!/bin/bash
-# Master script for z-score and LFC heatmaps for Figures 2E and 2G
+# Master script for the LFC heatmap in Figures 2J
 cnt_dir=''
 atac_dir=''
 work_dir=$(pwd)'/'
 path=''
 
 help() {
-   echo "Calculates zscore and LFC to plot heatmaps for Figures 2E/G."
+   echo "Calculates LFC to plot heatmap in Figures 2J."
    echo
    echo "Syntax: ./master_RE_heatmap.sh [-a|b|c|d|p|t|h]"
    echo "options:"
-   echo "a     Provide directory containing BAM files (ATAC-seq). [mandatory]"
-   echo "b     Provide directory containing BAM files (CUT&Tag. [mandatory]"
+   echo "a     Provide directory containing BAM files (Buecker et al., 2014). [mandatory]"
+   echo "b     Provide directory containing BAM files (Wang et al., 2017). [mandatory]"
    echo "d     Provides working directory (Standard is current directory)."
    echo "h     Prints this help."
    echo "p     Provide path to /Xert_paper/NGS_downstream/. [mandatory]"
@@ -21,10 +21,10 @@ help() {
 parse_args() {
     case "$1" in
         -a)
-            atac_dir="$2"
+            bueck_dir="$2"
             ;;
         -b)
-            cnt_dir="$2"
+            wang_dir="$2"
             ;;
         -d)
             work_dir="$2"
@@ -54,23 +54,23 @@ then
   exit 1
 fi
 
-if [[ $cnt_dir == '' ]]
+if [[ $bueck_dir == '' ]]
 then
-	echo -e "Please provide the path to a directory containing CUT&Tag BAM files with -b"
+	echo -e "Please provide the path to a directory containing Buecker et al., 2014 BAM files with -a"
   exit 1
 fi
 
-if [[ $atac_dir == '' ]]
+if [[ $wang_dir == '' ]]
 then
-	echo -e "Please provide the path to a directory containing ATAC-seq BAM files with -a"
+	echo -e "Please provide the path to a directory containing Wang et al., 2017 BAM files with -b"
   exit 1
 fi
 
-atac_dir=$(realpath $atac_dir)'/'
-cnt_dir=$(realpath $cnt_dir)'/'
+bueck_dir=$(realpath $bueck_dir)'/'
+wang_dir=$(realpath $wang_dir)'/'
 work_dir=$(realpath $work_dir)'/'
 path=$(realpath $path)'/'
 
-# Calculates Z-score and LFC and plots heatmaps
-echo -e "Plots Figures 2E ang 2G"
-Rscript ${path}scripts/RE_cnt_heatmaps.R $atac_dir $cnt_dir ${path}files/candidate_re.saf $work_dir
+# Plots heatmap
+echo -e "Plots Figure 2J"
+Rscript ${path}scripts/TF_heatmap.R $bueck_dir $wang_dir ${path}files/candidate_re.saf $work_dir

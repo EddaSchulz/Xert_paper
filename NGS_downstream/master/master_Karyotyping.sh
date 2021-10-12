@@ -1,12 +1,12 @@
 #!/bin/bash
-# Master script to identify CTCF binding sites for Figures 7A-B and S7A-B
+# Master script to plot karyotyping heatmaps for Figure S4F
 work_dir=$(pwd)'/'
 path=''
 
 help() {
-   echo "Prepares CTCF .tsv file from FIMO for use in UCSC (to visualize CBS)."
+   echo "Prepares heatmap for karyotyping data of all novel cell lines."
    echo
-   echo "Syntax: ./master_CTCFtrack.sh [-d|p|h]"
+   echo "Syntax: ./master_karyotypiing.sh [-d|p|h]"
    echo "options:"
    echo "d     Provides working directory (Standard is current directory)."
    echo "h     Prints this help."
@@ -47,6 +47,6 @@ fi
 work_dir=$(realpath $work_dir)'/'
 path=$(realpath $path)'/'
 
-# Uses .tsv file from FIMO to create colored BED track for UCSC
-echo -e "Generating CBS track"
-Rscript ${path}scripts/generate_CBS_bed.R ${path}files/ $work_dir
+# Uses karyotyping plots to generate a chromosome-seperated heatmap
+echo -e "Generating karyotyping heatmap"
+Rscript ${path}scripts/karyotyping_plot.R ${path}files/ $work_dir
