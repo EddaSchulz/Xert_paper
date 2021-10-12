@@ -1,4 +1,4 @@
-#This script plots the correlation matrix for Supplementary Fig. 2e
+#This script plots the correlation matrix for Figure S2D
 library(tidyverse)
 library(egg)
 library(extrafont)
@@ -42,7 +42,7 @@ pearson_plot <- pearson_df_long %>%
   scale_fill_gradient2(low = "blue", mid = "white", high = "red", limits = c(-1,1), midpoint = 0) +
   labs(fill = "Pearson correlation")
 
-pdf("Sup_Fig_2e_CUTnTag_correlation.pdf", useDingbats = FALSE, onefile = FALSE)
+pdf("S2D_CUTnTag_correlation.pdf", useDingbats = FALSE, onefile = FALSE)
 fix <- set_panel_size(pearson_plot, width = unit(3, "cm"), height = unit(3, "cm"))
 
 print(grid.arrange(fix))

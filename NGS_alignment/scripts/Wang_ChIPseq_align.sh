@@ -1,10 +1,10 @@
 #!/bin/bash
-# Performs alignment and filtering of ChIP-seq data from Wang et al. 2017
+# Performs alignment and filtering of ChIP-seq data from Wang et al., 2017
 
 path=$1
 fastq_dir=$2 # FASTQ files can be found at GSE70486
 work_dir=$3
-ebwt=$4 # B6/Cast masked genome (prepared with build_bowtie2.sh)
+ebwt=$4 # mm10 genome (prepared with build_bowtie2.sh)
 
 
 cd $work_dir

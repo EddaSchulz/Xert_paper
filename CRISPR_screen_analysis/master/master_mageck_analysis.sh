@@ -1,6 +1,6 @@
 #!/bin/bash
 # Master script for data analysis and plotting based on MAGeCK
-# Plots Figures 1d-f and Supplementary Figures 1k-l
+# Plots Figures 1D-F and SK-L
 work_dir=$(pwd)'/'
 path=''
 
@@ -51,10 +51,10 @@ work_dir=$(realpath $work_dir)'/'
 path=$(realpath $path)'/'
 
 
-# Plotting Fig. 1d-e and Sup. Fig. 1k-l
+# Plotting Figures 1D-E and S1K-L
 echo -e "Plotting mageck mle vs genomic coordinates"
 Rscript ${path}scripts/Xic_foldchange_plots.R ${path}files/ $work_dir
 
-# Plotting Fig. 1f
+# Plotting Figure 1F
 echo -e "Plotting betascore heatmap"
 Rscript ${path}scripts/Betascore_heatmap.R ${path}files/ $work_dir

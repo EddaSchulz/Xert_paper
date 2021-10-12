@@ -1,6 +1,6 @@
 #!/bin/bash
 # Master script for QC of the CRISPR screen
-# Plots Supplementary Figures 1e and 1h-j
+# Plots Figures S1E and S1H-J
 work_dir=$(pwd)'/'
 path=''
 
@@ -51,10 +51,10 @@ work_dir=$(realpath $work_dir)'/'
 path=$(realpath $path)'/'
 
 
-# Plotting Sup. Fig 1h
+# Plotting Figure S1H
 echo -e "Plotting correlation between replicates"
 Rscript ${path}scripts/Screen_correlation.R ${path}files/ $work_dir
 
-# Plotting Sup. Figs. 1e + 1i-j
-echo -e "Plotting betascore heatmap"
+# Plotting Figures S1E and S1I-J
+echo -e "Plotting guide count distributions"
 Rscript ${path}scripts/guide_distribution.R ${path}files/ $work_dir

@@ -1,4 +1,4 @@
-#This script plots the heatmaps in figures 3C and 3D
+#This script plots the heatmaps in Figures 2E and 2G
 library(tidyverse)
 library(Rsubread)
 library(extrafont)
@@ -89,7 +89,7 @@ zscore_map <- zscore_df %>%
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5)) +
   labs(fill = "Z-score")
 
-pdf("Fig_3c_RE_zscore.pdf", useDingbats = FALSE, onefile = FALSE)
+pdf("2E_RE_zscore.pdf", useDingbats = FALSE, onefile = FALSE)
 fix <- set_panel_size(zscore_map, width = unit(0.8333, "cm"), height = unit(5, "cm"))
 
 print(grid.arrange(fix))
@@ -127,7 +127,7 @@ lfc_map <- lfc %>%
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5)) +
   labs(fill = "Fold change XXdXic / XO (Log2)")
 
-pdf("Fig_3d_RE_LFC.pdf", useDingbats = FALSE, onefile = FALSE)
+pdf("2G_RE_LFC.pdf", useDingbats = FALSE, onefile = FALSE)
 fix <- set_panel_size(lfc_map, width = unit(0.8333, "cm"), height = unit(5, "cm"))
 
 print(grid.arrange(fix))

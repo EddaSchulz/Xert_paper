@@ -1,4 +1,4 @@
-#This script plots Supplementary Fig. 2g
+#This script plots Figure S2F
 library(tidyverse)
 library(egg)
 library(extrafont)
@@ -35,7 +35,7 @@ pca_plot <- data.frame(pca$rotation) %>%
                  color = factor(mark, levels = c("H3K4me3", "H3K27ac", "H3K4me1", "H3K27me3", "H2AK119ub")))) +
   scale_color_manual(values = c("#43AD4F", "#415CA7", "#62C3D4", "#B71398", "#FFD700"))
 
-pdf("Sup_Fig_2g_nChIP_CUTnTag_PCA.pdf", useDingbats = FALSE, onefile = FALSE)
+pdf("S2F_nChIP_CUTnTag_PCA.pdf", useDingbats = FALSE, onefile = FALSE)
 fix <- set_panel_size(pca_plot, width = unit(2, "cm"), height = unit(2, "cm"))
 
 print(grid.arrange(fix))

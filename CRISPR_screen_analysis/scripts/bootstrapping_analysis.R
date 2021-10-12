@@ -1,5 +1,5 @@
 #This script performs the bootstrapping analysis
-#Plots Fig. 1g and Sup. Fig. 1m
+#Plots Figures 1G and S1M
 library(tidyverse)
 library(gridExtra)
 library(egg)
@@ -120,7 +120,7 @@ boot_plot <- plot_df %>%
   scale_fill_grey(start = 0.3, end = 0.9) +
   scale_color_grey(start = 0.3, end = 0.9)
 
-pdf("Fig_1g_Sup_Fig_1m_bootstrapping_plot.pdf", useDingbats = FALSE, onefile = FALSE)
+pdf("1G_S1M_bootstrapping_plot.pdf", useDingbats = FALSE, onefile = FALSE)
 fix <- set_panel_size(boot_plot, width = unit(1, "cm"), height = unit(2, "cm"))
 
 print(grid.arrange(fix))

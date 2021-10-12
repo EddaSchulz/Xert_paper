@@ -51,7 +51,7 @@ fi
 
 if [[ $fastq_dir == '' ]]
 then
-	echo -e "Please provide a path to STARR-seq FASTQ files (GSEXXX) with -f"
+	echo -e "Please provide a path to STARR-seq FASTQ files (GSE167355) with -f"
   exit 1
 fi
 

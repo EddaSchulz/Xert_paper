@@ -5,7 +5,7 @@ work_dir=$(pwd)'/'
 path=''
 
 help() {
-   echo "Builds masked mm10 genome, aligns and processes ATAC-seq data, Calls peaks and creates coverage tracks."
+   echo "Builds masked mm10 genome, aligns and processes ATAC-seq data. Also calls peaks and creates coverage tracks."
    echo
    echo "Syntax: ./master_ATACseq.sh [-d|f|p|h]"
    echo "options:"
@@ -68,7 +68,7 @@ ${path}scripts/build_bowtie2.sh $path $work_dir $genome
 ebwt=${work_dir}genome/mm10
 
 # Aligns FASTQ files and performs filtering steps
-${path}scripts/ATACseq_align.sh $path $fastq_dir $work_dir $ebwt
+${path}scripts/ATACseq_align.sh $path $fastq_dir $work_dir $ebwt ${path}files/mm10.bl.bed
 
 bam_dir=${work_dir}final_bam'/'
 

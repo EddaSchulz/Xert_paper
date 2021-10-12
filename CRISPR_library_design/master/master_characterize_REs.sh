@@ -1,6 +1,6 @@
 #!/bin/bash
 # Characterizes the Candidate REs based on which peaks were present in them
-# Plots Sup. Fig. 1b-d
+# Plots Figures S1B-D
 work_dir=$(pwd)'/'
 path=''
 
@@ -52,6 +52,6 @@ path=$(realpath $path)'/'
 echo -e "Characterizing candidate REs"
 Rscript ${path}scripts/Char_Candidate_REs.R ${path}files $work_dir
 
-# Plots Supplementary Figures 1b-d
+# Plots Figures S1B-D
 echo -e "Plotting candidate REs"
 Rscript ${path}scripts/Plot_Candidate_REs.R ${work_dir}Char_candidate_RE.txt $work_dir

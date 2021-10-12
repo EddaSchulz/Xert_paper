@@ -1,5 +1,5 @@
 #!/bin/bash
-# Master script to align ChIPseq data from Wang et al. 2017 (GSE70486)
+# Master script to align ChIPseq data from Wang et al., 2017 (GSE70486)
 fastq_dir=''
 work_dir=$(pwd)'/'
 path=''
@@ -45,7 +45,7 @@ done
 
 if [[ $path == '' ]]
 then
-	echo -e "Please provide a path to /Gjaltema_paper/NGS_alignment with -p"
+	echo -e "Please provide a path to /Xert_paper/NGS_alignment with -p"
   exit 1
 fi
 
@@ -61,11 +61,8 @@ path=$(realpath $path)'/'
 
 genome=${path}files/mm10.fa
 
-# Renames FASTQ files from GEO to more descriptive names
-${path}scripts/rename_fastq.sh $fastq_dir
 
-
-# Build genome index for bowtie2 from N_masked mm10 genome
+# Build genome index for bowtie2 from mm10 genome
 ${path}scripts/build_bowtie2.sh $path $work_dir $genome
 
 ebwt=${work_dir}genome/mm10

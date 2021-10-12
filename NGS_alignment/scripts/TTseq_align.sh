@@ -29,10 +29,10 @@ do
 			--outSAMtype BAM Unsorted --outFileNamePrefix $f\_ --outSAMattributes NH HI NM MD --runThreadN 20
 
   echo -e "Filtering $f for properly paired reads"
-  samtools view -@ 12 -q 7 -f 3 -b $f\_Aligned.out.bam > $f\_filtered.bam
+  samtools view -q 7 -f 3 -b $f\_Aligned.out.bam > $f\_filtered.bam
 
   echo -e "Sorting BAM files for $f"
-  samtools sort -@ 12 -m 1G $f\_filtered.bam -T $f\_sorted -o $f\_sorted.bam
+  samtools sort -m 1G $f\_filtered.bam -T $f\_sorted -o $f\_sorted.bam
 
   echo -e "Removing blacklisted regions for $f"
   bedtools intersect -v -a $f\_sorted.bam -b ${path}files/mm10.bl.bed > $f\_sorted_blacklisted.bam
@@ -41,12 +41,12 @@ do
   java -jar picard.jar MarkDuplicates INPUT=$f\_sorted_blacklisted.bam \
 				OUTPUT=${bam_dir}$f\_dedup.bam METRICS_FILE=$f\_dedupMetric.txt VALIDATION_STRINGENCY=LENIENT \
 				REMOVE_DUPLICATES=TRUE
-  samtools index -@ 12 ${bam_dir}$f\_dedup.bam
+  samtools index ${bam_dir}$f\_dedup.bam
 
 	echo -e "Splitting the BAM files according to the strand for $f"
   ${path}scripts/split_allele.sh ${bam_dir}$f\_dedup.bam ${data_dir}
 	mv $f\_dedup_minus.bam ${strand_bam_dir}$f\_dedup_minus.bam
 	mv $f\_dedup_plus.bam ${strand_bam_dir}$f\_dedup_plus.bam
-	samtools index -@ 12 ${strand_bam_dir}$f\_dedup_minus.bam
-	samtools index -@ 12 ${strand_bam_dir}$f\_dedup_plus.bam
+	samtools index ${strand_bam_dir}$f\_dedup_minus.bam
+	samtools index ${strand_bam_dir}$f\_dedup_plus.bam
 done

@@ -1,12 +1,12 @@
 #!/bin/bash
-# Master script for z-score and LFC heatmaps for Fig. 3c-d
+# Master script for z-score and LFC heatmaps for Figures 2E and 2G
 cnt_dir=''
 atac_dir=''
 work_dir=$(pwd)'/'
 path=''
 
 help() {
-   echo "Calculates zscore and LFC to plot heatmaps for Fig. 3c-d."
+   echo "Calculates zscore and LFC to plot heatmaps for Figures 2E/G."
    echo
    echo "Syntax: ./master_RE_heatmap.sh [-a|b|c|d|p|t|h]"
    echo "options:"
@@ -72,5 +72,5 @@ work_dir=$(realpath $work_dir)'/'
 path=$(realpath $path)'/'
 
 # Calculates Z-score and LFC and plots heatmaps
-echo -e "Plots Fig. 3c-d"
+echo -e "Plots Figures 2E ang 2G"
 Rscript ${path}scripts/RE_cnt_heatmaps.R $atac_dir $cnt_dir ${path}files/candidate_re.saf $work_dir

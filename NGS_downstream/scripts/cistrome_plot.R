@@ -1,4 +1,4 @@
-# Plots Cistrome DB toolkit analysis for Sup. Fig. 3d
+# Plots Cistrome DB toolkit analysis for Figure S2L
 library(tidyverse)
 library(egg)
 library(gridExtra)
@@ -42,7 +42,7 @@ cistrome_plot <- cistrome_df %>%
   labs(x = "GIGGLE score (Similarity)")
 
 
-pdf("Sup_Fig_3d_cistrome_db_xert.pdf", useDingbats = FALSE, onefile = FALSE)
+pdf("S2L_CistromeDB_Xert.pdf", useDingbats = FALSE, onefile = FALSE)
 fix <- set_panel_size(cistrome_plot, width = unit(1.5, "cm"), height = unit(3, "cm"))
 
 print(grid.arrange(fix))

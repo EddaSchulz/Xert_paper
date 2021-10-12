@@ -1,5 +1,5 @@
 #!/bin/bash
-# Creates BIGWIG tracks for unspliced NGS data (pA-RNAseq)
+# Creates BIGWIG tracks for unspliced or unpaired NGS data
 
 
 work_dir=$1

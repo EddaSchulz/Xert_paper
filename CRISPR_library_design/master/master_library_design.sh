@@ -1,6 +1,6 @@
 #!/bin/bash
 # Master script to design CRISPR screen library
-# Returns BED files for Fig. 1b
+# Returns BED files for Figure 1B
 starr_dir=''
 atac_dir=''
 work_dir=$(pwd)'/'

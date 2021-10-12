@@ -1,12 +1,12 @@
 #!/bin/bash
-# Master script to create Fig. 2d and Supplementary Fig. 2h
+# Master script to create Figures 2D and S2H
 atac_dir=''
 cnt_dir=''
 work_dir=$(pwd)'/'
 path=''
 
 help() {
-   echo "Uses ChromHMM to create Fig. 2d and Supplementary Fig. 2h."
+   echo "Uses ChromHMM to create Figures 2D and S2H."
    echo
    echo "Syntax: ./master_ChromHMM.sh [-b|d|p|h]"
    echo "options:"

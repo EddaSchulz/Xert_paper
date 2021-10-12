@@ -1,5 +1,5 @@
 #!/bin/bash
-# Master script to identify CTCF binding sites for Figs. 7f-g and Sup. Figs 7d-e.
+# Master script to identify CTCF binding sites for Figures 7A-B and S7A-B
 work_dir=$(pwd)'/'
 path=''
 

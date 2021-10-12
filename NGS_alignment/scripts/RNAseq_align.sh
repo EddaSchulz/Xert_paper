@@ -2,9 +2,9 @@
 # Performs alignment and filtering of RNA-seq data
 
 path=$1
-fastq_dir=$2 # FASTQ files can be found at GSE167356
+fastq_dir=$2 
 work_dir=$3
-ebwt=$4 # B6/Cast masked genome (prepared with STAR_genomeGenerate.sh)
+ebwt=$4 # B6/Cast masked or standard mm10 genome (prepared with STAR_genomeGenerate.sh)
 
 
 cd $work_dir

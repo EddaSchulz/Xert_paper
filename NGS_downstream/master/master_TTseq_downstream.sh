@@ -1,6 +1,6 @@
 #!/bin/bash
 # Master script for read counting and DE gene enrichment for RNA-seq and TT-seq data
-# Plots Fig. 4b and Supplementary Fig. 4b
+# Plots Figure 3B
 tt_dir=''
 rna_dir=''
 work_dir=$(pwd)'/'
@@ -90,6 +90,6 @@ Rscript ${path}scripts/DEseq_ttseq.R $tt_counts $rna_counts $gencode $work_dir
 
 DEseq_file=${work_dir}DEseq2_ttseq_total.txt
 
-# Plots Xic gene expression in heatmap (Fig. 4b) and lineplot (Sup. Fig. 4b)
+# Plots Xic gene expression for Figure 3B
 echo -e "Plots Xic lncRNA expression data"
 Rscript ${path}scripts/plot_ttseq_TPM.R $tt_TPM $rna_TPM $DEseq_file $work_dir

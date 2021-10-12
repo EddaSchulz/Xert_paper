@@ -20,4 +20,4 @@ fimo <- fimo_tsv %>%
   arrange(chr, start)
 
 
-write_delim(fimo, "Sup_Fig_7d_fimo_cbs.bed", delim = "\t", col_names = FALSE)
+write_delim(fimo, "S7A_FIMO_CBS.bed", delim = "\t", col_names = FALSE)

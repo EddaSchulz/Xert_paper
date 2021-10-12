@@ -1,11 +1,11 @@
 #!/bin/bash
-# Master script to align ChIPseq data from Zylicz et al. 2019 (GSE116990)
+# Master script to align ChIPseq data from Zylicz et al., 2019 (GSE116990)
 fastq_dir=''
 work_dir=$(pwd)'/'
 path=''
 
 help() {
-   echo "Builds masked mm10 genome, aligns and processes ChIPseq data from Zylicz et al. 2019."
+   echo "Builds masked mm10 genome, aligns and processes ChIPseq data from Zylicz et al., 2019."
    echo
    echo "Syntax: ./master_Zylicz_ChIPseq.sh [-d|f|p|h]"
    echo "options:"
