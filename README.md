@@ -9,11 +9,11 @@ Developmental genes such as Xist, the master regulator of X-chromosome inactivat
 
 
 ## Description
-CRISPR_library_design: Contains instructions, code and files to reproduce the library design for the non-coding CRISPRi screen within the Xist locus.
+CRISPR_library_design: Contains instructions, code and files to reproduce the library design for the non-coding CRISPRi screen within the Xist locus. (Code by Till Schwämmle)
 
-CRISPR_screen_analysis: Contains instructions, code and files to reproduce the analysis for the CRISPR interference screen during the onset of random XCI.
+CRISPR_screen_analysis: Contains instructions, code and files to reproduce the analysis for the CRISPR interference screen during the onset of random XCI. (Code by Till Schwämmle)
 
-NGS_alignment: Contains instructions, code and files to reproduce alignment and processing of NGS data utilized in the manuscript.
+NGS_alignment: Contains instructions, code and files to reproduce alignment and processing of NGS data utilized in the manuscript. (Code by Till Schwämmle)
 
-NGS_downstream: Contains instructions, code and files to reproduce analyses of processed NGS data.
+NGS_downstream: Contains instructions, code and files to reproduce analyses of processed NGS data. (Code by Till Schwämmle)
 
